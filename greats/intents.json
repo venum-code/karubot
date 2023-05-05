@@ -1,0 +1,20 @@
+{"intents":[
+
+    {"tag":"greetings",
+     "patterns":["hello","hey","good day","greetings"],
+     "responses":["hello","hey","what can i do for you"]
+     },
+
+    {"tag":"goodbye",
+     "patterns":["cya","see you later","goodbye","i am leaving"],
+     "responses":["talk to you later","see you","goodbye"]
+     },
+
+    {"tag":"name",
+     "patterns":["what is your name","what should i call you","what do they call you"],
+     "responses":["you can call me Humminton",
+                  "I'm Humminton"]
+     }
+     
+]
+}

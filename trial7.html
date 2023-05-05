@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chatbot</title>
+    <style>
+      
+      body {
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+#chatbox {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 500px;
+  margin: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#chatbox-header {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: #fff;
+  border-radius: 10px 10px 0 0;
+}
+
+#chatbox-body {
+  padding: 10px;
+  height: 300px;
+  overflow-y: auto;
+}
+#chatbox-body .user-message {
+  background-color: #e6f7ff;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+#chatbox-body .chatbot-message {
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+#chatbox-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+#chatbox-input input {
+  flex-grow: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#chatbox-input button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+
+#container {
+  display: flex;
+}
+#left-panel {
+  width: 30%;
+  height: 100vh;
+  background-color: #8f1212;
+}
+.right-panel {
+  width: 70%;
+  height: 100vh;
+  background-color: #3ec91b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+}
+
+
+
+    </style>
+  </head>
+<body>
+    <div class="container">
+      <div class="left-panel">
+      </div>
+      <div class="right-panel">
+      </div>
+    </div>
+    <div id="chatbox">
+      <div id="chatbox-header">Venum</div>
+      <div id="chatbox-body"></div>
+      <div id="chatbox-input">
+        <input type="text" id="message" placeholder="Type your message here...">
+        <button id="send">Send</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    var chatboxBody = document.getElementById('chatbox-body');
+    var messageInput = document.getElementById('message');
+    var sendButton = document.getElementById('send');
+    
+ 
+function sendMessage() {
+var message = messageInput.value;
+if (message.trim() == '') {
+  return;
+}
+
+// Create a new message element for the user's message
+var userMessage = document.createElement('div');
+userMessage.classList.add('message', 'user-message'); // Add the "user-message" class
+userMessage.innerHTML = '<div><strong>You:</strong> ' + message + '</div>';
+chatboxBody.appendChild(userMessage);
+messageInput.value = '';
+
+// Send the message to the chatbot and display the response
+fetch('/get', {
+  method: 'POST',
+  body: new URLSearchParams({
+    message: message
+  })
+})
+.then(response => response.text())
+.then(data => {
+  // Create a new message element for the chatbot's response
+  var chatbotMessage = document.createElement('div');
+  chatbotMessage.classList.add('message', 'chatbot-message'); // Add the "chatbot-message" class
+  var chatbotText = document.createElement('div');
+  chatbotText.innerHTML = '<strong>Chatbot:</strong> ';
+  chatbotMessage.appendChild(chatbotText);
+  chatboxBody.appendChild(chatbotMessage);
+
+  // Add the bot's response letter by letter with a delay
+  var i = 0;
+  var responseInterval = setInterval(function() {
+    if (i < data.length) {
+      chatbotText.innerHTML += data.charAt(i);
+      i++;
+    } else {
+      clearInterval(responseInterval);
+      chatboxBody.scrollTop = chatboxBody.scrollHeight;
+    }
+  }, 50);
+})
+.catch(error => console.error(error));
+}
+
+    sendButton.addEventListener('click', sendMessage);
+    messageInput.addEventListener('keyup', function(event) {
+      if (event.key === 'Enter') {
+        sendMessage();
+      }
+    });
+  </script>
+</body>
+</html>  

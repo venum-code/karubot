@@ -1,0 +1,12 @@
+***************KARATINA UNIVERSITY BOT ************
+The bot is customised for Karatina University
+
+install the below frameworks before you run the code
+       1. Tensorflow
+       2. Nltk_data
+
+NOTE: Before you run the code, change the path to intents for the chatbot.py and training.py
+
+****Running the code*******
+1. Run the training.py to train the model
+2. Run the chatbot.py to start the chatbot

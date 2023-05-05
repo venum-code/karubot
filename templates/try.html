@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chatbot</title>
+    <style>
+        body {
+            background-color: #f9f9f9;
+            font-family: Arial;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .left-panel {
+            flex: 1 1 25%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .right-panel {
+            flex: 1 1 75%;
+            max-width: 600px;
+            padding: 50px;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-top: 0;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 2px solid #ccc;
+        }
+        .submit-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    width: 30px;
+    font-family: 'FontAwesome';
+    font-size: 24px;
+    color: #4CAF50;
+}
+
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button[type="submit"]:hover {
+            opacity: 0.8;
+        }
+
+        
+        .submit-btn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
+            width: 30px;
+        }
+
+        .submit-btn img {
+            height: 30px;
+            width: 30px;
+        }
+
+        .message-container {
+            margin-top: 20px;
+            overflow-y: scroll;
+            max-height: 400px;
+        }
+
+        .message {
+            background-color: #f1f0f0;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .bot-message {
+            text-align: left;
+        }
+
+        .user-message {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <h1>Chatbot</h1>
+            <p>A simple chatbot interface built with Flask and TensorFlow</p>
+        </div>
+        <div class="right-panel">
+            <div class="message-container" id="message-container">
+            </div>
+            <form onsubmit="sendMessage(); return false;">
+                <input type="text" placeholder="Type your message..." id="user-input">
+                <!-- <button type="submit" class="submit-btn"><i class="fas fa-plane"></i></button> -->
+                <button type="submit" class="submit-btn"><span class="fa fa-paper-plane"></span></button>
+
+
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const messageContainer = document.getElementById("message-container");
+        const userInput = document.getElementById("user-input");
+        function addMessage(message, sender) {
+            const messageElement = document.createElement("div");
+            messageElement.className = "message";
+            messageElement.classList.add(sender + "-message");
+            messageElement.innerText = message;
+            messageContainer.append(messageElement);
+        }
+
+        function sendMessage() {
+            const userInputValue = userInput.value;
+            addMessage(userInputValue, "user");
+            userInput.value = "";
+            const xhttp = new XMLHttpRequest();
+            xhttp.open("POST", "/send_message");
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("message=" + userInputValue);
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    const response = JSON.parse(this.responseText)["response"];
+                    addMessage(response, "bot");
+                }
+            };
+        }
+    </script>
+</body>
+</html>
+

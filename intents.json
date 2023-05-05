@@ -1,0 +1,390 @@
+{"intents":[
+
+    {"tag":"greetings",
+     "patterns":["hello","hey","good day","greetings"],
+     "responses":["hello","hey","what can i do for you"]
+     },
+
+    {"tag":"goodbye",
+     "patterns":["cya","see you later","goodbye","i am leaving"],
+     "responses":["talk to you later","see you","goodbye"]
+     },
+
+    {"tag":"name",
+     "patterns":["what is your name","what should i call you","what do they call you"],
+     "responses":["<h1>you can call me venum</h1>",
+                  "<h1>I'm venum</h1>",
+                  "<h1> I am venum the rocking programmer</h1>"]
+     },
+    {
+        "tag": "weather",
+        "patterns": ["what's the weather like in Karatina?",
+                    "Does it rain alot in Karatina?",
+                     "What is the weather like in August in Karatina?", 
+                    "what's the temperature in Karatina?"],
+        "responses": ["The weather in Karatian can be described as cold, it is advisable to carry heavy clothings", 
+                     "The weather in Karatina is cold during the first semester and a bit warm during the second semester.", 
+                     "It is cold in Karatina. It si therfore advisable to carry warm clothings"]
+     },
+    {
+        "tag": "events",
+        "patterns": ["what events are there in Karatina?", 
+                     "what is the next event in School?",
+                     "what are some of the events in School?",
+                    "what's going on today?", "is there any event coming next in School?"],
+        "responses": ["There are many events in the School. It all depends with the school calender. some of the events are but not limited to : \n1.Graduation in December \n2.Games and Sports during the first and second semester \n3.Club events throughout the school calender", 
+                    "You can refer for your favourite event in the list below:some of the events are but not limited to : \n1.Graduation in December \n2.Games and Sports during the first and second semester \n3.Club events throughout the school calender", 
+                    "Below are some of the upcoming and past events that happen in Karatina:some of the events are but not limited to : \n1.Graduation in December \n2.Games and Sports during the first and second semester \n3.Club events throughout the school calender",
+                    "Click this link to know about the upcoming events https://karu.ac.ke/student-notice-board/"]
+    },
+    {   "tag":"age",
+        "patterns":["how old is the school","how old are you",
+                    "what is your age","how old are you now"],
+        "responses":["i am a virtual assiatnt i dont have age",
+                   "i am old enough to know that i am a system, so i dont have an appropriate age"]
+     
+    },
+    {   "tag":"hours",
+        "patterns":["what hours are you open",
+                    "when are you open",
+                    "what time do you operate",
+                    "are you currently opened?"],
+        "responses":["we are open right now",
+                    "we are open from 8.00 am to 9pm",
+                    "we are currently open",
+                    "we are currently closed"]
+     
+    },
+    {
+        "tag": "directions",
+        "patterns": ["how do I get to the school?", 
+                    "what's the best way to get to the school?", 
+                    "can you give me directions to the school?", 
+                    "where is the school located?",
+                    "where is Karatina university located"],
+        "responses": ["The school is located at in around Karatina some 20km from  Nyeri.",
+                     "Here are the directions directions.To get to the school, you have have to travel to Karatina town. Then take a cab to main university or the town campus which is in Karatina town", 
+                      "Here are the directions to Karatina University: To get to the school, you have have to first travel to Karatina town. If you are going to main campus you will have to take a cab, otherwise town campus is located within Karatina town"]
+    },
+ 
+    {
+        "tag": "fees_payment",
+        "patterns": [
+            "how do I pay my fees?",
+            "what's the process for paying fees?",
+            "when is the fees deadline?",
+            "how much do I owe for fees?",
+            "what are the methods of paying fees?",
+            "how can I pay my fees?",
+            "what payment options are available?",
+            "can I pay fees through M-Pesa?"
+        ],
+        "responses": [
+            "To pay your fees, you can go to the school's finance office or log in to the online portal. You can pay your fees through the following methods:\n1. School's finance office\n2. M-Pesa\n3. Bank\n\nPlease let me know if you need more information on any of these methods."
+        ]
+    },
+    {
+    "tag": "admissions",
+    "patterns": ["What are the requirements for admission?",
+                 "How do I apply to the university?",
+                 "What are the application deadlines?", 
+                 "Can I apply as an international student?"],
+    "responses": ["To be admitted as a student of Karatina, you need to first fill out the application form and mail it to the school", 
+                  "You can apply to the university by filling out an application form and submitting the required documents.", 
+                  "The application deadline is stated in your admission letter.", 
+                  "Yes, international students are welcome to apply. Please check Karatina university website for international student application requirements."]
+    },
+    {
+    "tag": "courses",
+    "patterns": ["What courses does the university offer?", 
+                 "Can you tell me more about the courses offered in the university",
+                  "What are the prerequisites for [specific course]?",
+                  "What is required to pursue a [specific course]",
+                   "How many credits is required for a [specific course]?"],
+    "responses": ["Karatina University offers a wide range of courses.n1/follow the links under their respective schools to know more about the courses offered:\n1.School of Business https://sob.karu.ac.ke/, \n2. School of Pure and Applied Sciences https://karu.ac.ke/school-of-pure-and-applied-sciences,\n3.School of Agriculture and BIotechnology https://karu.ac.ke/school-of-agriculture-and-biotechnology/,\n4. School of Nursing https://karu.ac.ke/school-of-nursing/,\n5. School of Education and Social Sciences https://karu.ac.ke/school-of-education-and-social-sciences/, \n6. School of Natural Resources and Environment Studies https://karu.ac.ke/school-of-natural-resources-environmental-studies/", 
+                  "Sure, click the links under your school of choice to know about the courses offered in Karatina University.\n1.School of Business https://sob.karu.ac.ke/, \n2. School of Pure and Applied Sciences https://karu.ac.ke/school-of-pure-and-applied-sciences,\n3.School of Agriculture and BIotechnology https://karu.ac.ke/school-of-agriculture-and-biotechnology/,\n4. School of Nursing https://karu.ac.ke/school-of-nursing/,\n5. School of Education and Social Sciences https://karu.ac.ke/school-of-education-and-social-sciences/, \n6. School of Natural Resources and Environment Studies https://karu.ac.ke/school-of-natural-resources-environmental-studies/", 
+                  "To know more about the prerequisites about your course of interest, expore the links under the different schools below: \n1.School of Business https://sob.karu.ac.ke/, \n2. School of Pure and Applied Sciences https://karu.ac.ke/school-of-pure-and-applied-sciences,\n3.School of Agriculture and BIotechnology https://karu.ac.ke/school-of-agriculture-and-biotechnology/,\n4. School of Nursing https://karu.ac.ke/school-of-nursing/,\n5. School of Education and Social Sciences https://karu.ac.ke/school-of-education-and-social-sciences/, \n6. School of Natural Resources and Environment Studies https://karu.ac.ke/school-of-natural-resources-environmental-studies/"]
+    },
+    {
+    "tag": "housing",
+    "patterns": ["What are the housing options for students?",
+                 "Is there accomodation for students in the School",
+                 "How are students accomodated in the university",
+                 "How much does the school Hostel cost",
+                 "Can a student stay out of School in there freshman years?", 
+                 "When can I apply for hostel?", 
+                 "Is off-campus housing available?"],
+    "responses": ["Karatina University offers hostel accomodation for all students in their first year",
+                 "The cost of hostels is Ksh 6500",
+                  "You can apply for hostel accomodation two weeks prior joining the school and before deadline (refer to the school calender in your admission letter)",
+                 "Yes, student in their freshman years can stay out of School but it is highly recommended to stay in school hostels for convience purposes"]
+    },    
+    {
+    "tag": "financial_aid",
+    "patterns": ["What are some of the financial aids the University offers?", 
+                 "How can I apply for scholarships?",
+                 "Are there any scholarships offered by the University",
+                 "Does the University offer scholarships for students",
+                 "Are there any loans available for students?"], 
+    "responses": ["Karatina University currently offers financial aid to total orphaned students only.mail your personal details to this email address for more guidelines if you are a total orphaned student. info@karu.ac.ke", 
+                  "Karatina University currently offers scholarship to total orphaned students only. Mail your personal details to this email address for more guidelines if your are a total orphaned student. info@karu.ac.ke",
+                  "You can apply for scholarships if you are a total orphaned student by mailing your personal details to this email address info@karu.ac.ke.", 
+                  "Yes, there are loans available for students. The Kenyan government offers loans to students under the Higher Education Loan Board (HELB). Please visit this link to know more about HELB and apply for loan "]
+    },   
+    {
+    "tag": "academic_calendar",
+    "patterns": ["When does the semester start?", 
+                 "When does the semester end", 
+                 "When are the final exams?",
+                 "Can you describe the school calender?",
+                 "How long are the long holidays?",
+                  "Is the university closed on public holidays?"],
+                  
+    "responses": ["The semester starts on [start date].", 
+                  "The start of the semester depends on your current year of study. you can click on this link to know about when your semester starts. https://karu.ac.ke/student-notice-board/", 
+                  "The date of the final exams depend on your current year of study. ypu can click on this link to know about the start of your final exams. https://karu.ac.ke/student-notice-board/", 
+                  "Sure, the school's academic calender is subject to changes and is therefore not guranteed to ramain constant. However the current academic calender is as follows. The academic calender is divided into two semesters. The first semester starts on August and ends in December while the second semester commens on January and ends in April.",
+                  "The long holidays are subject to change but usually starts on May to start August",
+                  "Yes, the university is closed on public holidays such as [list of holidays]."]
+    },   
+    {
+    "tag": "library",
+    "patterns": ["What are the library hours?",
+                  "When is the library open?",
+                  "When is the library open",
+                  "What are the requirements to get into the library",
+                  "What do i require to access the library",
+                  "Does the University have an online library",
+                  "Does the university have a virtual library",            
+                   "Can I borrow books from the library?", 
+                   "What are the requirements needed to borrow a book from the library",
+                   "How long can i stay with the book from the library?",
+                   "What should i do incase i loose a book borrowed from the library",
+                   "What is the penalty for loosing a book borrowed from the library?",
+                   "Are there any quiet study spaces available?",
+                    "How do I access online library resources?"],
+    "responses": ["The Karatina University library is opened: \n1.from 8.00 A.M to 10.00PM on weekdays. \n2. from 8.00 A.M to 12.00 noon on saturday \n3. the library is closed during public holidays", 
+                 "The requirements to get into the University library are your student ID and any other necessary document required by the librarian",
+                "You will need your student ID card to access the university library",
+                "Yes, Karatina University has a virtual library that can be accessed via the school portal click this link to access the online library https://library.karu.ac.ke/",
+                "Sure thing, Karatina University has an online library that can be accessed via the school portal click this link to access the online library https://library.karu.ac.ke/",
+                 "Yes, you can borrow books from the library. All you need to provide is your student ID card.", 
+                 "The requirements for borrowing a book from the library are your student ID card and personal details",
+                 "A student is allowed to stay with the book borrowed from the library as stipulated by the librarian",
+                 "Incase a student looses a book from the University library, they should contact the school librarian personally",
+                 "The penalty for loosing a book borrowed from the university library depends on the book lost",
+                 "Yes, there are quiet study spaces available in the library.",
+                 "You can access online library resources by clickning this link https://library.karu.ac.ke/"]
+               
+    },
+    {
+    "tag": "it_support",
+    "patterns": ["I'm having trouble with my computer",
+                 "Does the university offer IT_Support?",
+                 "Does the university offer online IT_Support?",
+                  "Where can i get IT_Support?",
+                 "How do I connect to the university Wi-Fi?",
+                  "What software do I need for [specific course]?",
+                   "Is there a help desk for IT support?"],
+    "responses": ["If you are having any trouble with your computer, you can mail your description to the IT_Support team via this email address:info@karu.ac.ke ", 
+                 "You can connect to the university Wi-Fi by clicking on KarU WIFI under available WI-FI Networks in your smart phonei-Fi", 
+                 "The required software for your course will be provided by the lecturer once your lessons begin", 
+                 "Sure, you can get online IT_Support, just mail the description of the problems you are facing to the IT_Support team via this email address:info@karu.ac.ke",
+                 "Yes, there is a help desk for IT support located at ICT department office. you can open google maps in your smartphone and the university map will guide you to the IT_Support team"]
+    },   
+    {
+    "tag": "career_services",
+    "patterns": ["How can I find attachment opportunities?",
+                  "Does the university help its students find attachment opportunities",
+                "What career fairs are available?",
+                 "What career opportunities are available after graduation?"],
+    "responses": ["You can find attachment opportunities by mailing your attachment letter provided by the school to the institution of your choice",
+                  "Yes, the university helps its student find attachmnet opportunities based on their course of study",
+                 "There are several career fairs throughout the year, click this link to know more https://karu.ac.ke/student-notice-board/",
+                "There are several career opportunities available for all graduates, visit the scholl career counsellor for more guidelines"]
+    },  
+    {
+    "tag": "international_students",
+    "patterns": ["What are the requirements for international students?", 
+                 "Is there an orientation for international students?",
+                 "Are International students allowed in the university",
+                 "Are there any resources for international students?"],
+    "responses": ["The requirements for international students are listed in their admission letter.", 
+                 "Yes, there is an orientation for international students",  
+                 "Sure, Karatina university promotes diversity by allowing students from abroad",
+                 "Yes, there are several resources available for international students"]
+    }, 
+    {
+    "tag": "health_services",
+    "patterns": ["Where is the student health center located?", 
+                 "What services are available at the health center?",
+                  "What is the process for scheduling an appointment with the doctor at the health center?",
+                  "Does the health center treat [specific] disease?",
+                  "Can i get medication for [specific] disease?",
+                  "Are students charged for visitng the health center?", 
+                  "when is the university health centre opened?",
+                  "what are the closing and opening hours for the university health center?",
+                  "Is there a cost for health services?"],
+                  
+    "responses": ["The student health center is located behing the transportation department, to the left of the Runda hostel", 
+                  "The health center provides various services, including: \n1.in patient services \n2.oupatient services \n3.counselling services \n4.Blood test \n5.Blood pressure test \n6.Diabetes test \n7. HIV/AIDS counselling and testing \n8. Pregnancy testing \n9. other services, visit the health centre if your condition is not met in this list", 
+                  "You can schedule an appointment by first visiting the health center", 
+                  "Sorry you are sick, you can get medication for your disease in the university health centre",
+                  "There are no closing or opening hours, the university health centre operates on a 24/hrs basis",
+                  "All medical services are free of charge, report if you are charged for medical services via this hotline:https://docs.google.com/forms/d/e/1FAIpQLSenxEoWZFxh_D7rfBA4FQ4CE0sDDZr5cA5MhHyCLlI2KncMMg/viewform"]
+    }, 
+    {
+    "tag": "dining_options",
+    "patterns": ["what's on the menu today?",
+                 "I am hungry, where can I get food",
+                "which foods are served in the mess?",
+                "What food is avaialble for lunch?",
+                "what food is avaialble for supper?",
+                "is the mess open?",
+                "is the mess closed?",
+                "At what time does the mess operate?",
+                "Are there vegetarian options available?"], 
+    "responses": ["The food in the menu today are \n1. Rice @ 15 \n2. Beans @15  \n3. Githeri @35 \n4. Pilau @40 \n5. Chapati @10 \n6. Ugali @ 5",
+                 "Yes, there are vegetarian options available at all dining locations on campus.", 
+                 "The foods served in the university mess are as follows:\n1. Rice @ 15 \n2. Beans @15  \n3.Githeri @35 \n4. Pilau @40 \n5. Chapati @10 \n6. Ugali @ 10 \n7. Cabbage @5",
+                "The mess is open between \n1.7.00AM to 3.00PM for lunch and supper \n2. 6.00PM to 8.00PM for supper", 
+                "The mess is closed between 3.00PM to 6.00PM and after 8.00PM"]
+    },
+        
+    {
+        "tag": "Faculty Directory",
+        "patterns": [
+            "How can I find contact information for a faculty member?",
+            "What is the email address for my professor?",
+            "Who teaches [course name]?",
+            "What are the office hours for my professor?"
+        ],
+        "responses": [
+            "You can find contact information for a faculty member in our online directory.",
+            "The email address for your professor is [email address].",
+            "[Professor's name] teaches [course name].",
+            "The office hours for your professor are [office hours]."
+        ]
+    },
+    {
+        "tag": "Student Clubs and Organizations",
+        "patterns": [
+            "What student clubs are available?",
+            "How can I join a student organization?",
+            "Are there any events coming up?",
+            "What is the [specific club] about?"
+        ],
+        "responses": [
+            "We have a variety of student clubs and organizations available including:\n1. Red Cross club \n2. Natural Resources club aka the Green Forces",
+            "You can join a student organization by contacting the club's president or attending an event.",
+            "Yes, there are several events coming up. click on this link to see more events. https://karu.ac.ke/student-notice-board/",
+            "[Specific club] is a [description of the club]."
+        ]
+    },
+    {
+        "tag": "Lab",
+        "patterns": ["What are the lab hours?", 
+                      "Does Karatina University have modern laboratories",
+                      "What kind of labs does Karatina University have",
+                      "When is the lab open?", 
+                      "Can you tell me the lab hours?"],
+        "responses": ["Karatina university has modern fully equipped laboratories",
+                      "Karatina University has modern fully equiped sciences and agricultual laboratories",
+                      "The lab is open from 8.00AM to 5.00PM on weekdays and closed on weekends and public holidays."]
+    },
+    {
+        "tag": "Grading Policies",
+        "patterns": ["How are grades calculated?", 
+                     "Can you explain the grading policy?", 
+                     "What is the grading scale?"],
+        "responses": ["Grades are calculated based on KUCCPS grading policy", 
+                     "The grading policy is outlined in the course syllabus.", 
+                     "The grading scale is as follows: \n1. A = 100-70,\n2. B = 69-60 \n3. C = 59-40 \n4. D = 39-30, \n5. = 29-0"]
+    },
+    {
+        "tag": "Continuing Education",
+        "patterns": [
+        "What are the continuing education options at this university?",
+        "I want to continue my education, what are my options?",
+        "Are there any continuing education programs available?"
+        ],
+        "responses": [
+        "There are several continuing education options available at this university, including: \n1. Masters degree \n2. certificate programs, \n3. non-degree courses \n4. Philosophy in Doctrate."
+        ]
+    },
+    {
+        "tag": "Student Life",
+        "patterns": [
+        "What is campus life like?",
+        "Is campus life fun?",
+        "How is campus life in Karatina campus?"],
+        "responses": [
+        "There are many opportunities for students to get involved in campus life, such as clubs and organizations, student government, athletics, cultural events, and volunteer programs.",
+        "Campus life in Karatina university is fun. There are plenty of activities and people you will meet and have fun together"
+        ]
+    },
+    {
+        "tag": "Academic Support",
+        "patterns": [
+        "How can I get academic support?",
+        "Are there tutoring services available?",
+        "I need help with my coursework, what should I do?"
+        ],
+        "responses": [
+        "The university offers a variety of academic support services, including tutoring, study groups, academic advising, and academic coaching. Please contact the academic support center or your academic advisor for more information."
+        ]
+    },
+    {
+        "tag": "Campus Tours",
+        "patterns": [ "How do I sign up for a campus tour?", 
+                      "What's included in a campus tour?", 
+                      "Can I bring guests on a tour?"],
+        "responses": ["Karatina university offers campus tours regularly through its various clubs. you can sign up for a tour if you belong to the club hosting the tour. Non club-members are allowed to go for the tour but will pay extra charge",
+                       "The campus tours includes transportation, food and accomodation if the tour takes more than a day"
+        ]
+    },
+    {
+        "tag": "Student Health Insurance",
+        "patterns": ["Do I need health insurance?", 
+                   "How do I enroll in the student health insurance plan?", 
+                   "What does the student health insurance plan cover?",
+                    "Can I use my own health insurance instead?"],
+        "responses": ["All students are required to have health insurance. The university have partnered with the NHIF and offer a student health insurance plan that covers a range of medical services, including preventive care, emergency care, and prescription medications. To enroll, visit any NHIF branch near you."
+    ]
+    },
+    {
+        "tag": "Student Employment",
+        "patterns": ["Are there job opportunities available for students?",     
+                     "How can I find a job on campus?",
+                      "What kind of jobs are available for students?",
+                       "Can you tell me more about the student employment office?"],
+        "responses": ["The university has partnered with the Ajira Digital to provide  a platform for students to study and work at the same time"]
+    },
+    {   
+        "tag": "Parking Permits",
+        "patterns": ["How do I obtain a parking permit?", 
+                    "Are parking permits required?", 
+                    "Are students allowed to park in the campus",
+                    "What are the parking regulations on campus?"],
+        "responses": ["Visitors and students are allowed to park on campus perimeters after they have obtained a parking permit from the head of transport"]
+    },
+    {
+        "tag": "Online Learning",
+        "patterns": ["Do you offer online courses?", 
+                     "What online programs do you have?", 
+                     "I am having trouble signing in for online classes",
+                     "How can I access your online courses?"],
+        "responses": ["Karatina University currently offers a blended learning session of both physical and online classes as communicated by the Dean of Students. You can visit the Open Distance E-Learning platform to register for online classes and more information.",
+                    "You can access online classes through the  Open Distance E-Learning(ODEL)platform. Visit this link to register for online classes and or assistance"
+        ]
+    },
+    {
+        "tag": "graduation requirements",
+        "patterns":["what credits do i need to graduate",
+                    "what is the minimal requirement to graduate",
+                    "how do i graduate"],
+        "responses":["All students are allowed to graduate once they meet the following requirements: \n1. Complete your course \n2. Have a passmark of 40 points and above \n3. Completed all supplementary exams \n4. Completed procesing the clearance form \n5. Complete your fees"]
+
+    }  
+]
+}
